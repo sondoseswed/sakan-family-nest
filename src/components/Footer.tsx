@@ -1,5 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
+import {
+  Heart,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,7 +23,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              تمكين الأمة من خلال تمكين الأسرة، باعتبارها الجزء الأساسي في المجتمع
+              تمكين الأمة من خلال تمكين الأسرة، باعتبارها الجزء الأساسي في
+              المجتمع
             </p>
             <div className="flex gap-2">
               <Button variant="ghost" size="icon">
@@ -34,10 +43,38 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">خدماتنا</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">خدمات الزواج</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">الدعم الاستشاري</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">تخطيط الحياة</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">ورش تدريبية</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  خدمات الزواج
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  الدعم الاستشاري
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  تخطيط الحياة
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  ورش تدريبية
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -45,10 +82,38 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">الدعم</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">الأسئلة الشائعة</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">دليل الاستخدام</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">تواصل معنا</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-smooth">سياسة الخصوصية</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  الأسئلة الشائعة
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  دليل الاستخدام
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  تواصل معنا
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  سياسة الخصوصية
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -62,11 +127,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">+966 50 123 4567</span>
+                <span className="text-muted-foreground">+96278 0982472</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">الرياض، المملكة العربية السعودية</span>
+                <span className="text-muted-foreground">
+                  عمان , المملكة الأردنية الهاشمية
+                </span>
               </div>
             </div>
           </div>
@@ -74,7 +141,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 سكن. جميع الحقوق محفوظة
+            © 2025 سكن. جميع الحقوق محفوظة
           </p>
         </div>
       </div>

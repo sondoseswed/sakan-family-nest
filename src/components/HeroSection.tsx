@@ -19,12 +19,14 @@ const HeroSection = () => {
                   سكن
                 </span>{" "}
                 <br />
-                تمكين الأمة من خلال{" "}
-                <span className="text-secondary">الأسرة</span>
+                <div className="mt-3">
+                  تمكين الأمة من خلال{" "}
+                  <span className="text-secondary">الأسرة</span>
+                </div>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                منصة شاملة لدعم الأسر العربية في رحلتها نحو بناء حياة زوجية سعيدة ومستقرة
-                من خلال الخدمات الاستشارية والأدوات التفاعلية
+                منصة شاملة لدعم الأسر العربية في رحلتها نحو بناء حياة زوجية
+                سعيدة ومستقرة من خلال الخدمات الاستشارية والأدوات التفاعلية
               </p>
             </div>
 
@@ -47,7 +49,9 @@ const HeroSection = () => {
               <Card className="p-4 text-center space-y-2 hover-lift shadow-soft">
                 <Users className="h-8 w-8 text-secondary mx-auto" />
                 <div className="text-2xl font-bold text-secondary">50+</div>
-                <div className="text-sm text-muted-foreground">مستشار متخصص</div>
+                <div className="text-sm text-muted-foreground">
+                  مستشار متخصص
+                </div>
               </Card>
               <Card className="p-4 text-center space-y-2 hover-lift shadow-soft">
                 <Heart className="h-8 w-8 text-accent mx-auto" />
@@ -59,9 +63,9 @@ const HeroSection = () => {
 
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-              <img 
-                src={heroImage} 
-                alt="أسرة عربية سعيدة" 
+              <img
+                src={heroImage}
+                alt="أسرة عربية سعيدة"
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

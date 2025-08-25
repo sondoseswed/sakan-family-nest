@@ -1,62 +1,94 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  Heart, 
-  Users, 
-  Calculator, 
-  Home, 
-  CheckCircle, 
+import {
+  Heart,
+  Users,
+  Calculator,
+  Home,
+  CheckCircle,
   ArrowRight,
   Star,
-  Target
+  Target,
 } from "lucide-react";
 
 const MarriageServices = () => {
   const tools = [
     {
+      id: "personal-compatibility",
       title: "اختبار التوافق الشخصي",
-      description: "اكتشف مدى التوافق مع شريكك المحتمل من خلال اختبارات علمية مدروسة",
+      description:
+        "اكتشف مدى التوافق مع شريكك المحتمل من خلال اختبارات علمية مدروسة",
       icon: Heart,
-      features: ["تحليل الشخصية", "توافق الاهتمامات", "القيم المشتركة", "أهداف الحياة"],
-      status: "متاح"
+      features: [
+        "تحليل الشخصية",
+        "توافق الاهتمامات",
+        "القيم المشتركة",
+        "أهداف الحياة",
+      ],
+      status: "متاح",
     },
     {
+      id: "partner-guide",
       title: "دليل اختيار الشريك",
-      description: "دليل شامل يساعدك في اتخاذ قرارات صحيحة عند اختيار شريك الحياة",
+      description:
+        "دليل شامل يساعدك في اتخاذ قرارات صحيحة عند اختيار شريك الحياة",
       icon: Users,
-      features: ["معايير الاختيار", "أسئلة مهمة", "علامات التحذير", "نصائح الخبراء"],
-      status: "متاح"
+      features: [
+        "معايير الاختيار",
+        "أسئلة مهمة",
+        "علامات التحذير",
+        "نصائح الخبراء",
+      ],
+      status: "متاح",
     },
     {
+      id: "smart-home-management",
       title: "إدارة البيت الذكية",
       description: "أدوات تساعدك في تنظيم وإدارة شؤون البيت والحياة المشتركة",
       icon: Home,
-      features: ["جدولة المهام", "توزيع المسؤوليات", "قوائم التسوق", "تذكيرات ذكية"],
-      status: "قريباً"
+      features: [
+        "جدولة المهام",
+        "توزيع المسؤوليات",
+        "قوائم التسوق",
+        "تذكيرات ذكية",
+      ],
+      status: "قريباً",
     },
     {
+      id: "family-budget-planner",
       title: "مخطط الميزانية العائلية",
       description: "أدوات متقدمة لتخطيط وإدارة الميزانية المالية للأسرة",
       icon: Calculator,
-      features: ["تتبع المصروفات", "التخطيط للمستقبل", "أهداف الادخار", "تقارير مالية"],
-      status: "متاح"
-    }
+      features: [
+        "تتبع المصروفات",
+        "التخطيط للمستقبل",
+        "أهداف الادخار",
+        "تقارير مالية",
+      ],
+      status: "متاح",
+    },
   ];
 
   const benefits = [
     "تحسين جودة العلاقة الزوجية",
-    "اتخاذ قرارات مدروسة ومتوازنة", 
+    "اتخاذ قرارات مدروسة ومتوازنة",
     "بناء أساس قوي للحياة المشتركة",
-    "تجنب المشاكل الشائعة في بداية الزواج"
+    "تجنب المشاكل الشائعة في بداية الزواج",
   ];
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container px-4">
@@ -72,8 +104,8 @@ const MarriageServices = () => {
               سعيدة
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              مجموعة شاملة من الأدوات والاختبارات التي تساعدك في اختيار الشريك المناسب 
-              وبناء أساس قوي لحياة زوجية مستقرة وسعيدة
+              مجموعة شاملة من الأدوات والاختبارات التي تساعدك في اختيار الشريك
+              المناسب وبناء أساس قوي لحياة زوجية مستقرة وسعيدة
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg">
@@ -102,7 +134,10 @@ const MarriageServices = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {tools.map((tool, index) => (
-              <Card key={index} className="hover-lift shadow-soft hover:shadow-warm transition-all duration-300">
+              <Card
+                key={index}
+                className="hover-lift shadow-soft hover:shadow-warm transition-all duration-300"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
@@ -111,7 +146,12 @@ const MarriageServices = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <CardTitle className="text-xl">{tool.title}</CardTitle>
-                        <Badge variant={tool.status === "متاح" ? "default" : "secondary"} className="text-xs">
+                        <Badge
+                          variant={
+                            tool.status === "متاح" ? "default" : "secondary"
+                          }
+                          className="text-xs"
+                        >
                           {tool.status}
                         </Badge>
                       </div>
@@ -126,17 +166,30 @@ const MarriageServices = () => {
                     {tool.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
-                  <Button 
-                    variant={tool.status === "متاح" ? "default" : "secondary"} 
+                  <Button
+                    variant={tool.status === "متاح" ? "default" : "secondary"}
                     className="w-full"
                     disabled={tool.status !== "متاح"}
+                    onClick={() => {
+                      const routes = {
+                        "personal-compatibility": "/personal-compatibility",
+                        "partner-guide": "/partner-guide",
+                        "smart-home-management": "/smart-home-management",
+                        "family-budget-planner": "/family-budget-planner",
+                      };
+                      window.location.href = routes[tool.id];
+                    }}
                   >
                     {tool.status === "متاح" ? "استخدم الأداة" : "قريباً"}
-                    {tool.status === "متاح" && <ArrowRight className="h-4 w-4 mr-2" />}
+                    {tool.status === "متاح" && (
+                      <ArrowRight className="h-4 w-4 mr-2" />
+                    )}
                   </Button>
                 </CardContent>
               </Card>
@@ -154,8 +207,9 @@ const MarriageServices = () => {
                 لماذا تحتاج هذه الأدوات؟
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                في عصر تتزايد فيه تحديات الحياة الزوجية، تصبح الحاجة للإعداد المسبق 
-                والتخطيط الذكي أمراً ضرورياً لضمان نجاح العلاقة واستقرارها.
+                في عصر تتزايد فيه تحديات الحياة الزوجية، تصبح الحاجة للإعداد
+                المسبق والتخطيط الذكي أمراً ضرورياً لضمان نجاح العلاقة
+                واستقرارها.
               </p>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -178,14 +232,18 @@ const MarriageServices = () => {
                 <div>
                   <div className="text-3xl font-bold text-primary">95%</div>
                   <div className="text-lg font-medium">معدل نجاح</div>
-                  <div className="text-muted-foreground">من الأزواج الذين استخدموا أدواتنا</div>
+                  <div className="text-muted-foreground">
+                    من الأزواج الذين استخدموا أدواتنا
+                  </div>
                 </div>
                 <div className="bg-primary/10 rounded-lg p-4">
                   <p className="text-sm text-muted-foreground italic">
-                    "أدوات سكن ساعدتنا في فهم بعضنا البعض قبل الزواج 
-                    والآن نعيش حياة مستقرة وسعيدة بفضل التخطيط المسبق"
+                    "أدوات سكن ساعدتنا في فهم بعضنا البعض قبل الزواج والآن نعيش
+                    حياة مستقرة وسعيدة بفضل التخطيط المسبق"
                   </p>
-                  <div className="text-xs text-primary font-medium mt-2">- أحمد وفاطمة</div>
+                  <div className="text-xs text-primary font-medium mt-2">
+                    - أحمد وفاطمة
+                  </div>
                 </div>
               </div>
             </Card>
