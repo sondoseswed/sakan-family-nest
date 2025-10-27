@@ -1,19 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Heart, Home, Users } from "lucide-react";
-import heroImage from "@/assets/hero-family.jpg";
+import { ArrowRight, Heart, Home, Users, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import heroImage from "@/assets/hero.png";
+import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleStartWeddingPlanning = () => {
+    navigate("/wedding-planning");
+  };
+
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Heart className="h-4 w-4" />
-                تمكين الأسرة
-              </div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   سكن
@@ -25,18 +29,43 @@ const HeroSection = () => {
                 </div>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                منصة شاملة لدعم الأسر العربية في رحلتها نحو بناء حياة زوجية
-                سعيدة ومستقرة من خلال الخدمات الاستشارية والأدوات التفاعلية
+                تخطيط الزفاف الذكي لتسهيل تنظيم يومك الكبير وتقليل أي مشاكل أو
+                توتر محتمل
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" className="text-lg">
                 ابدأ رحلتك معنا
                 <ArrowRight className="h-5 w-5 mr-2" />
               </Button>
-              <Button variant="outline" size="lg" className="text-lg">
-                اكتشف خدماتنا
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg"
+                onClick={() => {
+                  const el = document.getElementById("services");
+                  el?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
+                اكتشف خدماتنا 
+              </Button>
+            </div> */}
+
+            {/* Prominent Wedding Planning Button */}
+            <div className="flex justify-right pt-6">
+              <Button
+                onClick={handleStartWeddingPlanning}
+                size="lg"
+                variant="hero"
+                className="relative text-white text-xl font-bold px-12 py-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 overflow-hidden"
+              >
+                {/* subtle pulsing glow */}
+                <div className="pointer-events-none absolute -inset-2 rounded-2xl bg-primary/20 blur-xl opacity-30 animate-pulse" />
+
+                <Sparkles className="h-5 w-5 ml-3 opacity-90 animate-spin" style={{ animationDuration: "8s" }} />
+                ابدأ تخطيط حفل الزفاف
+                <Sparkles className="h-5 w-5 mr-3 opacity-90 animate-spin" style={{ animationDuration: "8s", animationDirection: "reverse" }} />
               </Button>
             </div>
 

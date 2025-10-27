@@ -8,6 +8,9 @@ import MarriageServices from "./pages/MarriageServices";
 import SupportServices from "./pages/SupportServices";
 import PlanningServices from "./pages/PlanningServices";
 import NotFound from "./pages/NotFound";
+import WeddingPlanning from "./pages/WeddingPlanning";
+import PersonalityAssessment from "./pages/Personal-compatibility";
+import SmartGoalsFinance from "./pages/SmartGoalsFinance";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +25,12 @@ const App = () => (
           <Route path="/marriage" element={<MarriageServices />} />
           <Route path="/support" element={<SupportServices />} />
           <Route path="/planning" element={<PlanningServices />} />
+          <Route path="/wedding-planning" element={<WeddingPlanning />} />
+          <Route path="/smart-goals" element={<SmartGoalsFinance />} />
+          <Route
+            path="/personal-compatibility"
+            element={<PersonalityAssessment />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -34,7 +34,7 @@ const MarriageServices = () => {
         "القيم المشتركة",
         "أهداف الحياة",
       ],
-      status: "متاح",
+      status: "قريباً",
     },
     {
       id: "partner-guide",
@@ -48,7 +48,7 @@ const MarriageServices = () => {
         "علامات التحذير",
         "نصائح الخبراء",
       ],
-      status: "متاح",
+      status: "قريباً",
     },
     {
       id: "smart-home-management",
@@ -74,7 +74,7 @@ const MarriageServices = () => {
         "أهداف الادخار",
         "تقارير مالية",
       ],
-      status: "متاح",
+      status: "قريباً",
     },
   ];
 

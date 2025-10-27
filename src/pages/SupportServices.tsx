@@ -1,19 +1,29 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  MessageCircle, 
-  BookOpen, 
-  Users, 
-  Video, 
-  Clock, 
+import {
+  MessageCircle,
+  BookOpen,
+  Users,
+  Video,
+  Clock,
   Award,
   ArrowRight,
   Phone,
-  Calendar
+  Calendar,
+  Heart,
+  Bot,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const SupportServices = () => {
   const supportTypes = [
@@ -22,16 +32,26 @@ const SupportServices = () => {
       description: "جلسات استشارية خاصة مع مختصين في العلاقات الأسرية",
       icon: MessageCircle,
       duration: "60 دقيقة",
-      price: "150 ريال",
-      features: ["خصوصية تامة", "مرونة في المواعيد", "متابعة شخصية", "خطة علاجية"]
+      price: "150 دينار",
+      features: [
+        "خصوصية تامة",
+        "مرونة في المواعيد",
+        "متابعة شخصية",
+        "خطة علاجية",
+      ],
     },
     {
       title: "استشارات زوجية",
       description: "جلسات مشتركة للأزواج لحل المشاكل وتحسين التواصل",
       icon: Users,
-      duration: "90 دقيقة", 
-      price: "200 ريال",
-      features: ["حلول عملية", "تحسين التواصل", "إدارة الخلافات", "تقوية الرابطة"]
+      duration: "90 دقيقة",
+      price: "200 دينار",
+      features: [
+        "حلول عملية",
+        "تحسين التواصل",
+        "إدارة الخلافات",
+        "تقوية الرابطة",
+      ],
     },
     {
       title: "ورش تدريبية",
@@ -39,32 +59,50 @@ const SupportServices = () => {
       icon: Video,
       duration: "3 ساعات",
       price: "مجاني",
-      features: ["تفاعل جماعي", "خبرات متنوعة", "أنشطة عملية", "شهادة حضور"]
-    }
+      features: ["تفاعل جماعي", "خبرات متنوعة", "أنشطة عملية", "شهادة حضور"],
+    },
   ];
 
   const contentCategories = [
     {
       title: "إدارة العلاقات",
       articles: 25,
-      topics: ["التواصل الفعال", "حل الخلافات", "بناء الثقة", "التعبير عن المشاعر"]
+      topics: [
+        "التواصل الفعال",
+        "حل الخلافات",
+        "بناء الثقة",
+        "التعبير عن المشاعر",
+      ],
     },
     {
       title: "التربية الإيجابية",
       articles: 18,
-      topics: ["أساليب التربية", "التعامل مع المراحل العمرية", "القدوة الحسنة", "التحفيز"]
+      topics: [
+        "أساليب التربية",
+        "التعامل مع المراحل العمرية",
+        "القدوة الحسنة",
+        "التحفيز",
+      ],
     },
     {
       title: "الصحة النفسية",
       articles: 22,
-      topics: ["إدارة الضغوط", "التوازن النفسي", "الثقة بالنفس", "الاسترخاء"]
-    }
+      topics: ["إدارة الضغوط", "التوازن النفسي", "الثقة بالنفس", "الاسترخاء"],
+    },
   ];
+
+  const navigate = useNavigate();
+  const [weddingVisible, setWeddingVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setWeddingVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-accent/5 to-secondary/5">
         <div className="container px-4">
@@ -79,8 +117,8 @@ const SupportServices = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              فريق من الخبراء المتخصصين في الاستشارات الأسرية والنفسية يقدم لك الدعم 
-              والتوجيه اللازم لحل التحديات وبناء علاقات أسرية صحية
+              فريق من الخبراء المتخصصين في الاستشارات الأسرية والنفسية يقدم لك
+              الدعم والتوجيه اللازم لحل التحديات وبناء علاقات أسرية صحية
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="warm" size="lg">
@@ -104,12 +142,15 @@ const SupportServices = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               اختر نوع الدعم المناسب لحالتك واحتياجاتك الشخصية
-            </p>
+            </p>  
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {supportTypes.map((type, index) => (
-              <Card key={index} className="hover-lift shadow-soft hover:shadow-warm transition-all duration-300 relative overflow-hidden">
+              <Card
+                key={index}
+                className="hover-lift shadow-soft hover:shadow-warm transition-all duration-300 relative overflow-hidden"
+              >
                 <div className="absolute top-0 right-0 w-full h-1 bg-gradient-warm" />
                 <CardHeader>
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 flex items-center justify-center mb-4">
@@ -124,16 +165,22 @@ const SupportServices = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">{type.duration}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {type.duration}
+                      </span>
                     </div>
-                    <div className="text-xl font-bold text-primary">{type.price}</div>
+                    <div className="text-xl font-bold text-primary">
+                      {type.price}
+                    </div>
                   </div>
-                  
+
                   <ul className="space-y-2">
                     {type.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -157,13 +204,17 @@ const SupportServices = () => {
               مكتبة المحتوى التوعوي
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              مئات المقالات والفيديوهات التوعوية المتخصصة في مجال الأسرة والعلاقات
+              مئات المقالات والفيديوهات التوعوية المتخصصة في مجال الأسرة
+              والعلاقات
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {contentCategories.map((category, index) => (
-              <Card key={index} className="hover-lift shadow-soft hover:shadow-warm transition-all">
+              <Card
+                key={index}
+                className="hover-lift shadow-soft hover:shadow-warm transition-all"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <BookOpen className="h-6 w-6 text-secondary" />
@@ -176,7 +227,9 @@ const SupportServices = () => {
                     {category.topics.map((topic, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{topic}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {topic}
+                        </span>
                       </li>
                     ))}
                   </ul>

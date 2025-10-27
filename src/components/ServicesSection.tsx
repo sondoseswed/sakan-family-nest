@@ -23,7 +23,7 @@ const ServicesSection = () => {
   const services = [
     {
       id: "marriage",
-      title: "اختيار الشريك والتوافق الشخصي",
+      title: " التوافق الشخصي",
       description:
         "خدمات وأدوات تساعدك على فهم نفسك، اختيار الشريك المناسب، وبناء علاقة صحية.",
       icon: marriageIcon,
@@ -37,7 +37,7 @@ const ServicesSection = () => {
       bgGradient: "bg-gradient-primary",
     },
     {
-      id: "home",
+      id: "support",
       title: "خدمات الزواج والبيت",
       description: "أدوات عملية لإدارة الحياة الزوجية والبيت بعد الزواج.",
       icon: supportIcon,
@@ -129,14 +129,14 @@ const ServicesSection = () => {
                   onClick={() => {
                     const routes = {
                       marriage: "/marriage",
-                      support: "/home",
+                      support: "/support",
                       planning: "/planning",
                     };
                     window.location.href =
                       routes[service.id as keyof typeof routes];
                   }}
                 >
-                  استكشف الخدمة
+                 استكشف الخدمة 
                   <ArrowRight className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>

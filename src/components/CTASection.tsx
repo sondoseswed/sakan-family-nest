@@ -14,17 +14,25 @@ const CTASection = () => {
                 ابدأ رحلتك نحو حياة أسرية أفضل
               </h2>
               <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-                انضم إلى آلاف الأسر العربية التي اختارت سكن لبناء مستقبل أفضل. 
+                انضم إلى آلاف الأسر العربية التي اختارت سكن لبناء مستقبل أفضل.
                 احصل على استشارة مجانية واكتشف كيف يمكننا مساعدتك
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="secondary" size="xl" className="text-lg font-semibold">
+              <Button
+                variant="secondary"
+                size="xl"
+                className="text-lg font-semibold"
+              >
                 <Calendar className="h-6 w-6 ml-2" />
                 احجز استشارة مجانية
               </Button>
-              <Button variant="outline" size="xl" className="text-lg font-semibold border-white text-white hover:bg-white hover:text-primary">
+              <Button
+                variant="outline"
+                size="xl"
+                className="text-lg font-semibold border-white text-white  bg-white text-primary"
+              >
                 <MessageCircle className="h-6 w-6 ml-2" />
                 تحدث مع مستشار
               </Button>
